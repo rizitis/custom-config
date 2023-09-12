@@ -11,6 +11,7 @@ Also you must have a backup kernel in your installation in case of emergency...
 Boot from a Slackware stock generic kernel and:
 
 First you must plugin any device you use with you notebook: mouse, external ssd , headset...etc (everything)
+
 Second open your browser to an online camera and microphone test site. We want camera and mic to be working durring config creation.
 
 Download a kernel.tar.xz from [kernels.org ](https://kernel.org/)https://kernel.org/
@@ -29,7 +30,7 @@ cp arch/x86_64/boot/bzImage /boot/vmlinuz-6.5.2
 /usr/share/mkinitrd/mkinitrd_command_generator.sh -k 6.5.2
 ```
 The output will start like this: `mkinitrd -c -k 6.5.2 blabla...`
-Copy paste output in terminal **BUT BEFORE** hit enter  remove from command the option **-c**,
+Copy paste output in terminal **BUT BEFORE** hit enter  remove from command line option **-c**
 
 it should be like this:`mkinitrd -k 6.5.2 blabla...`
 
