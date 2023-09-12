@@ -28,7 +28,7 @@ make modules_install
 cp arch/x86_64/boot/bzImage /boot/vmlinuz-6.5.2
 /usr/share/mkinitrd/mkinitrd_command_generator.sh -k 6.5.2
 ```
-The output will start like this: `mkinitrd **-c** -k 6.5.2 blabla...`
+The output will start like this: `mkinitrd -c -k 6.5.2 blabla...`
 Copy paste output in terminal **BUT BEFORE** hit enter  remove from command the option **-c**,
 
 it should be like this:`mkinitrd -k 6.5.2 blabla...`
