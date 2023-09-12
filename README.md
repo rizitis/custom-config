@@ -30,7 +30,7 @@ Copy paste output in terminal **BUT BEFORE** hit enter  remove from command the 
 
 it should be like this:`mkinitrd -k 6.5.2 blabla...`
 
-When finish you can updated boot loader, grub or elilo... 
+When finish you can update boot loader, grub or elilo... 
 
 This is for grub:
 ```
