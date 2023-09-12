@@ -14,7 +14,10 @@ First you must plugin any device you use with you notebook: mouse, external ssd 
 Second open your browser to an online camera and microphone test site. We want camera and mic to be working durring config creation.
 
 Download a kernel.tar.xz from [kernels.org ](https://kernel.org/)https://kernel.org/
+
 Untar and cd in to linux folder.
+
+
 Following commands are for 6.5.2 kernel version, change version with yours...
 Note *that you must be in full root mode ```su -l``` DONT use only ```su```.*
 Note2 *You dont need the old .config of current kernel just follow commands*
