@@ -4,7 +4,7 @@
 This is how I created a custom .config for my omen 16 b1003xx (i7 12700h) laptop.
 With this config 6-7 minutes needed to build kernel modules and install them.
 Its an original **generic kernel**, builded the Slackware way.
-But it may not work for everything you will need in the future...becuse it use loaded modules at the time of .config creation and only.
+But it may not work for everything you will need in the future...because it use loaded modules at the time of .config creation and only.
 Also you must have a backup kernel in your installation in case of emergency... 
 
 ## HOWTO
