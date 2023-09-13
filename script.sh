@@ -27,7 +27,7 @@ if [ "$EUID" -ne 0 ];then
     exit 1
 fi
 
-KERNEL_VERSION="6.5.2"
+KERNEL_VERSION="6.5.3"
 echo "$KERNEL_VERSION"
 
 KERNEL_URL=https://cdn.kernel.org/pub/linux/kernel/v6.x  # dont change if we are still in 6.x.x kernel (NAME = Hurr 
@@ -76,19 +76,19 @@ make localmodconfig
 #make localconfig
 make "$JOBS"
 make modules_install
-
-/usr/share/mkinitrd/mkinitrd_command_generator.sh -k "$VERSION" > /boot/mymkinitrd.sh
+wait
+/usr/share/mkinitrd/mkinitrd_command_generator.sh -k "$KERNEL_VERSION" > /boot/mymkinitrd.sh
 sleep 2
 filename="mymkinitrd.sh"
 Clear="mkinitrd -c"
 NOClear="mkinitrd"
-sed -i "s/$Clear/$NOClear/" /boot/$filename
+sed -i "s/$Clear/$NOClear/" /boot/"$filename"
 wait
-cp arch/x86_64/boot/bzImage /boot/vmlinuz-"$VERSION"
-cp System.map /boot/System.map-"$VERSION"
+cp arch/x86_64/boot/bzImage /boot/vmlinuz-"$KERNEL_VERSION"
 
-sh /boot/$filename
-
+sh /boot/"$filename"
+wait
 grub-mkconfig -o /boot/grub/grub.cfg 
-echo "reboot..."
+echo "Done...:)"
+
 
