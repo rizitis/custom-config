@@ -34,7 +34,7 @@ KERNEL_URL=https://cdn.kernel.org/pub/linux/kernel/v6.x  # dont change if we are
 PRGNAM=linux
 GPG=gpg2
 WGET=wget
-JOBS=-j$(nproc)
+JOBS=-j$(getconf _NPROCESSORS_ONLN)
 
 
 cd /usr/src/ || exit 1
@@ -74,7 +74,7 @@ echo "cd to Linux-kernel package"
 cd $PRGNAM-"$KERNEL_VERSION"/ || exit 1
 make LSMOD="$HOME"/.config/modprobed.db localmodconfig
 #make localconfig
-make CC="ccache gcc" "$JOBS"
+make "$JOBS"
 make modules_install
 wait
 /usr/share/mkinitrd/mkinitrd_command_generator.sh -k "$KERNEL_VERSION" > /boot/mymkinitrd.sh
